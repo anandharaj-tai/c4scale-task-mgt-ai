@@ -4,7 +4,7 @@ from typing import Optional
 class CreateTaskInput(BaseModel):
     title: str = Field(description="The short, descriptive title of the task.")
     description: str = Field(description="A detailed description of the task.")
-    priority: str = Field(default="medium", description="The priority level, e.g., 'high', 'medium', or 'low'.")
+    priority: str = Field(default="high", description="The priority level, e.g., 'high', 'medium', or 'low'.")
     due_date: Optional[str] = Field(default=None, description="The optional due date for the task in a standard format (YYYY-MM-DD).")
 
 # Schema for update_task

@@ -39,7 +39,7 @@ class  CRUDBase:
             for field, value in filters.items():
                 if value is not None:  # Skip if the value is None
                     # Dynamically apply filter using getattr to access model attributes
-                    query = query.filter(getattr(self.model, field) == value)
+                    query = db.query(self.model).filter(getattr(self.model, field) == value)
         
         return query.offset(skip).limit(limit).all()
     

@@ -79,7 +79,7 @@ def delete_task(task_data: DeleteTaskInput):
     task_id = task_data.task_id
 
     deleted_task = crud_task.delete(db, id=task_id)
-    if not deleted_task:
+    if deleted_task:
         return {"error": "❌ Task not found."}
 
     return {"message": f"🗑️ Task '{deleted_task.title}' deleted successfully."}

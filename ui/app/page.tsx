@@ -53,7 +53,7 @@ export default function Home() {
       try {
         const res = await fetch(`${BACKEND_HTTP}/tasks/list`);
         const data = await res.json();
-        setTasks(Array.isArray(data) ? data : []);
+        setTasks(Array.isArray(data?.tasks) ? data.tasks : []);
       } catch (e) {
         // ignore for demo
       }

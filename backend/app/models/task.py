@@ -13,5 +13,5 @@ class Task(Base):
     status = Column(String, default="pending")
     priority = Column(String, default="medium")
     due_date = Column(DateTime, nullable=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.utcnow())
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
